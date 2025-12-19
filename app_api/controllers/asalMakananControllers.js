@@ -38,7 +38,6 @@ const createAsalMakanan = async (req, res)=> {
     const asalMakanan = new asalMakananSchema({
         nama: req.body.nama,
         kodeNegara: req.body.kodeNegara,
-        bendera: req.body.bendera,
         deskripsi: req.body.deskripsi
     })
     
@@ -65,10 +64,6 @@ const updateAsalMakananById = async (req, res) => {
             //jika ada request perubahan kode negara
             if(req.body.kodeNegara != null){
                 result.kodeNegara = req.body.kodeNegara;
-            }
-            //jika ada request perubahan bendera
-            if(req.body.bendera != null){
-                result.bendera = req.body.bendera;
             }
             //jika ada request perubahan deskripsi
             if(req.body.deskripsi != null){
