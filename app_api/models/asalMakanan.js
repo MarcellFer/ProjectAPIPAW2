@@ -14,11 +14,6 @@ const asalMakananSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-    // field untuk bendera emoji
-    bendera: {
-        type: String,
-        trim: true
-    },
     // field untuk deskripsi
     deskripsi: {
         type: String,
