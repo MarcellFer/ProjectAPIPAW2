@@ -6,7 +6,7 @@ const kategoriMakananSchema = require('../models/kategoriMakanan');
 const getAllKategoriMakanan = async (req, res) => {
     try {
         // mengambil semua kategori makanan dari database
-        const result = await kategoriMakananSchema.find();
+        const result = await kategoriMakananSchema.find().sort({nama : 1});
         // mengirimkan respon berisi data kategori makanan dengan status 200 (OK)
         res.status(200).json(result);
     } catch (error) {
