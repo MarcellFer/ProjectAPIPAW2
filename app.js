@@ -12,6 +12,7 @@ var cors = require('cors');
 const kategoriMakananRouterAPI = require('./app_api/routes/kategoriMakanan');
 const asalMakananRouterAPI = require('./app_api/routes/asalMakanan');
 const resepRouterAPI = require('./app_api/routes/resep');
+const usersAPIRouter = require('./app_api/routes/users');
 
 //route app_server
 var indexRouter = require('./app_server/routes/index');
@@ -36,11 +37,7 @@ app.use('/users', usersRouter);
 app.use('/api/kategoriMakanan', kategoriMakananRouterAPI);
 app.use('/api/asalMakanan', asalMakananRouterAPI);
 app.use('/api/resep', resepRouterAPI);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+app.use('/api/users', usersAPIRouter);
 
 // error handler
 app.use(function(err, req, res, next) {
